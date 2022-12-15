@@ -9,7 +9,7 @@ class ListsController < ApplicationController
   # データベースに保存
   list.save
   # トップ画面へリダイレクト
-  redirect_to '/top'
+  redirect_to list_path(list.id)
   end
 
   def edit
