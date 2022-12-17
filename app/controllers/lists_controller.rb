@@ -13,13 +13,23 @@ class ListsController < ApplicationController
   end
 
   def edit
+    # 編集機能
+    @list = List.find(params[:id])
+  end
+  # 更新する
+  def update
+    list = List.find(params[:id])
+    list.update(list_params)
+    redirect_to list_path(list.id)
   end
 
   def show
+    # 詳細画面
     @list = List.find(params[:id])
   end
 
   def index
+    # 一覧画面
     @lists = List.all
   end
   
