@@ -9,7 +9,7 @@ class ListsController < ApplicationController
   # データベースに保存
     if @list.save
   # トップ画面へリダイレクト
-      redirect_to list_path(list.id)
+      redirect_to list_path(@list.id)
     else
      render :new
     end
